@@ -7,6 +7,10 @@ header {
     align-items: center;
     justify-content: space-around;
     border-bottom: solid 8px var(--secondary-color);
+    position: fixed;
+    top: 0;
+    left :0;
+    transition: top 0.3s ease;
 }
 .btn-header {
     margin:0;
@@ -21,9 +25,11 @@ header {
     scale: 1.1;
 }
 .titulo{
-    font-family: var(--secondary-font);
-    color:var(--primary-color-oposite);
+    font-family: var(--primary-font);
+    color:var(--tertiary-color-oposite);
+    font-size: 50px;
+    font-weight: bold;
 }
 .icon-header{
-    color:var(--primary-color-oposite);
+    color:var(--tertiary-color-oposite);
 }

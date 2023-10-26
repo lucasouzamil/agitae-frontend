@@ -1,4 +1,4 @@
-section {
+.section-publisher {
     position: fixed;
     left: 50%;
     top: 50%;
@@ -10,7 +10,7 @@ section {
     border-radius: 10px;
     box-shadow: 5px 5px 50px rgb(0 0 0 / 40%);
     backdrop-filter: blur(33px);
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     padding: 10px;
 }
 [in-screen='false'] {
@@ -22,7 +22,7 @@ section {
     left: -150%;
 }
 .icon-x{
-    color:var(--primary-color-oposite);
+    color:var(--tertiary-color-oposite);
 }
 
 .header-publisher {
@@ -33,14 +33,21 @@ section {
 }
 
 .btn-x-publisher {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0;
     padding: 0;
     background-color: transparent;
     scale: 1;
-    transition: scale 0.3s ease;
+    transition: scale 0.3s ease, background-color 0.3s ease;
     border: None;
     cursor: pointer;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
 }
 .btn-x-publisher:hover {
     scale: 1.08;
+    background-color: var(--secondary-color);
 }
