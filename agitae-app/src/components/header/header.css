@@ -1,0 +1,29 @@
+header {
+    background-color: var(--primary-color);
+    height: 100px;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: solid 8px var(--tertiary-color);
+}
+.btn-header {
+    margin:0;
+    padding:0;
+    background-color: transparent;
+    scale: 1;
+    transition: scale 0.3s ease;
+    border: None;
+    cursor: pointer;
+}
+.btn-header:hover {
+    scale: 1.1;
+}
+.titulo{
+    font-family: var(--secondary-font);
+    color:var(--primary-color-oposite);
+}
+.icon-header{
+    color:var(--primary-color-oposite);
+}

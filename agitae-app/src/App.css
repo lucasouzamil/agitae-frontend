@@ -1,0 +1,43 @@
+:root {
+    --primary-color: None;
+    --secondary-color: None;
+    --tertiary-color: None;
+    --primary-color-oposite: None;
+    --secondary-color-oposite: None;
+    --tertiary-color-oposite: None;
+    --primary-font: 'Abril Fatface';
+    --secondary-font: 'Roboto';
+}
+
+[color-theme='light'] {
+    --primary-color: #FFFFFF;
+    --secondary-color: #F6F6F6;
+    --tertiary-color: #DEE0E1;
+
+    --primary-color-oposite: #232428;
+    --secondary-color-oposite: #2F3336;
+    --tertiary-color-oposite: #424147;
+}
+
+[color-theme='dark'] {
+    --primary-color: #232428;
+    --secondary-color: #2F3336;
+    --tertiary-color: #424147;
+
+    --primary-color-oposite: #FFFFFF;
+    --secondary-color-oposite: #F6F6F6;
+    --tertiary-color-oposite: #DEE0E1;
+}
+
+.App {
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+}
+
+* {
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border 0.3s ease;
+}
