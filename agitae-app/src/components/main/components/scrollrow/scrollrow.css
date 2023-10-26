@@ -1,0 +1,48 @@
+.scrollRow {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.scrollRow--listarea {
+    overflow-x: hidden;
+}
+
+.item--list {
+    white-space: nowrap;
+}
+
+.item {
+    display: inline-block;
+    transform: scale(0.9);
+    opacity:0.7;
+    transition: all 0.2s ease;
+    cursor:pointer;
+    padding: 0;
+}
+.item:hover{
+    transform: scale(1);
+    opacity: 1;
+}
+.teste{
+    height: 200px;
+    width: 300px;
+    background-color: white;
+}
+
+.scrollRow-left,
+.scrollRow-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    width: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.scrollRow:hover .scrollRow-left,
+.scrollRow:hover .scrollRow-right{
+    opacity: 1;
+}

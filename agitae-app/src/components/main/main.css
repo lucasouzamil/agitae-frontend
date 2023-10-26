@@ -1,3 +1,10 @@
+* {
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        border 0.3s ease;
+}
+
 main {
     background-color: var(--tertiary-color);
     width: 100vw;
@@ -9,10 +16,9 @@ main {
     padding-top: 108px;
 }
 
-.section-main{
+.section-main {
     background-color: var(--primary-color);
     border-radius: 10px;
-    height: 100vh;
     width: 100vh;
     max-height: 60vh;
     max-width: 60vw;
@@ -28,12 +34,12 @@ main {
     color: var(--tertiary-color-oposite);
 }
 
-.section-title{
-    margin:0;
+.section-title {
+    margin: 0;
     font-family: var(--primary-font);
     font-size: 40px;
 }
 
-#section-main-header-icon-title{
+#section-main-header-icon-title {
     margin-left: 20px;
 }

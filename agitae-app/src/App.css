@@ -10,23 +10,23 @@
 }
 
 [color-theme='light'] {
-    --primary-color: #FFFFFF;
-    --secondary-color: #F6F6F6;
-    --tertiary-color: #DEE0E1;
+    --primary-color: #B6B6B6;
+    --secondary-color: #D2D1D2;
+    --tertiary-color: #E8E8E8;
 
-    --primary-color-oposite: #232428;
-    --secondary-color-oposite: #2F3336;
-    --tertiary-color-oposite: #424147;
+    --primary-color-oposite: #252525;
+    --secondary-color-oposite: #2D2D30;
+    --tertiary-color-oposite: #3E3E42;
 }
 
 [color-theme='dark'] {
-    --primary-color: #232428;
-    --secondary-color: #2F3336;
-    --tertiary-color: #424147;
+    --primary-color: #252525;
+    --secondary-color: #2D2D30;
+    --tertiary-color: #3E3E42;
 
-    --primary-color-oposite: #FFFFFF;
-    --secondary-color-oposite: #F6F6F6;
-    --tertiary-color-oposite: #DEE0E1;
+    --primary-color-oposite: #B6B6B6;
+    --secondary-color-oposite: #D2D1D2;
+    --tertiary-color-oposite: #E8E8E8;
 }
 
 .App {

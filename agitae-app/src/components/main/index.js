@@ -2,6 +2,7 @@ import React from "react";
 import './main.css'
 import ExploreIcon from '@mui/icons-material/Explore';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
+import ScrollRow from './components/scrollrow'
 
 export default function Mains(props) {
 
@@ -12,6 +13,7 @@ export default function Mains(props) {
                     <ExploreIcon className="section-main-header-icon" style={{ fontSize: 50 }}></ExploreIcon>
                     <p className="section-title" id='section-main-header-icon-title'>Explorar</p>
                 </div>
+                <ScrollRow></ScrollRow>
             </section>
             <section className="section-main">
                 <div className="section-main-header">

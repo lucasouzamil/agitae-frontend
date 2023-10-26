@@ -8,9 +8,14 @@ header {
     justify-content: space-around;
     border-bottom: solid 8px var(--secondary-color);
     position: fixed;
+    z-index: 999;
     top: 0;
     left :0;
     transition: top 0.3s ease;
+}
+.logo{
+    height: 200px;
+    width: auto;
 }
 .btn-header {
     margin:0;

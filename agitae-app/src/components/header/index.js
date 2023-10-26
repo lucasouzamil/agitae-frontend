@@ -37,7 +37,7 @@ export default function Header(props) {
                     <AddCircleIcon className='icon-header' style={{ fontSize: 50 }}></AddCircleIcon>
                 </button>
             </div>
-            <h1 className='titulo'> LOGO </h1>
+            <h1 className="titulo">LOGO</h1>
             <div>
                 <button className='btn-header' onClick={props.changeTheme}>
                     <DarkModeIcon className='icon-header' style={{ fontSize: 50 }}></DarkModeIcon>
