@@ -7,6 +7,11 @@
 
 .scrollRow--listarea {
     overflow-x: hidden;
+    margin: 0px 10px;
+}
+
+.scrollRow--list{
+    transition: margin 0.2s ease;
 }
 
 .item--list {
@@ -16,33 +21,47 @@
 .item {
     display: inline-block;
     transform: scale(0.9);
-    opacity:0.7;
+    opacity: 0.7;
     transition: all 0.2s ease;
-    cursor:pointer;
+    cursor: pointer;
     padding: 0;
+    margin: 0;
 }
-.item:hover{
+
+.item:hover {
     transform: scale(1);
     opacity: 1;
 }
-.teste{
+
+.teste {
     height: 200px;
     width: 300px;
     background-color: white;
 }
 
+.iconeScrollLeft,
+.iconeScrollRight {
+    color: var(--tertiary-color-oposite);
+}
+
 .scrollRow-left,
-.scrollRow-right{
+.scrollRow-right {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background-color: var(--tertiary-color);
     width: 20px;
+    scale: 0.9;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease, scale 0.2s ease;
+    cursor:pointer;
 }
 
 .scrollRow:hover .scrollRow-left,
-.scrollRow:hover .scrollRow-right{
+.scrollRow:hover .scrollRow-right {
     opacity: 1;
+}
+
+.scrollRow-left:hover{
+    scale: 1;
 }
