@@ -1,0 +1,5 @@
+main {
+    background-color: var(--tertiary-color);
+    height: 600px;
+    width: 100vw;
+}

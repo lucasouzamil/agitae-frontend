@@ -5,16 +5,7 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 export default function Header(props) {
-    const [theme, setTheme] = useState('dark');
     const [publisherVisible, setPublisherVisible] = useState(('false'));
-
-    const changeTheme = () => {
-        if (theme === 'light') {
-            setTheme('dark');
-        } else {
-            setTheme('light');
-        }
-    };
 
     const changePublishVisibile = () => {
         if (publisherVisible === 'true') {
@@ -25,16 +16,16 @@ export default function Header(props) {
     };
 
     return (
-        <header color-theme={theme}>
+        <header color-theme={props.theme}>
             <Publisher inscreen={publisherVisible} setvisible={changePublishVisibile}></Publisher>
             <div>
                 <button className='btn-header' onClick={changePublishVisibile}>
                     <AddCircleIcon className='icon-header' style={{ fontSize: 50 }}></AddCircleIcon>
                 </button>
             </div>
-            <h1 className='titulo'> aaaaaaaaaaaa </h1>
+            <h1 className='titulo'> LOGO </h1>
             <div>
-                <button className='btn-header' onClick={changeTheme}>
+                <button className='btn-header' onClick={props.changeTheme}>
                     <DarkModeIcon className='icon-header' style={{ fontSize: 50 }}></DarkModeIcon>
                 </button>
             </div>

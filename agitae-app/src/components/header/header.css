@@ -6,7 +6,7 @@ header {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    border-bottom: solid 8px var(--tertiary-color);
+    border-bottom: solid 8px var(--secondary-color);
 }
 .btn-header {
     margin:0;
