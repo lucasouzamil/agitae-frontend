@@ -1,4 +1,4 @@
-.main {
+.main-eventsubtype {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,7 +10,7 @@
     margin-bottom: 15px;
 }
 
-.blockIcon {
+.blockIcon-eventsubtype {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -22,7 +22,7 @@
     z-index: 0;
 }
 
-.icon {
+.icon-eventsubtype {
     width: 100%;
     object-fit: cover;
     position: absolute;
@@ -31,7 +31,7 @@
     border-radius: 10px;
 }
 
-.textType {
+.textType-eventsubtype {
     font-family: var(--secondary-font);
     color: white;
     opacity: 0.8;

@@ -39,7 +39,7 @@ export default function ScrollRow(props) {
         setTransitionX('off');
 
         const scrollAmount = e.deltaX;
-        const newScrollX = scrollX - scrollAmount * 0.1;
+        const newScrollX = scrollX - scrollAmount * 0.2;
         const listWidth = nItens * widthItem;
 
         if (newScrollX > 0) {

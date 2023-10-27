@@ -14,13 +14,12 @@ export default function EventSubType(props) {
     }
 
 
-
     return (
-        <div className="main">
-            <div className="blockIcon">
-                <img className="icon" src={`/assets/iconeseventos/musica/${makeSimple(props.name)}-white.png`} alt='teste' />
+        <div className="main-eventsubtype">
+            <div className="blockIcon-eventsubtype">
+                <img className="icon-eventsubtype" src={`/assets/iconeseventos/musica/${makeSimple(props.name)}-white.png`} alt='teste' />
             </div>
-            <p className="textType">{props.name}</p>
+            <p className="textType-eventsubtype">{props.name}</p>
         </div>
     );
 }

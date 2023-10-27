@@ -1,7 +1,7 @@
 .container {
     background: linear-gradient(to top right,var(--primary-color-oposite), var(--tertiary-color-oposite));
     border-radius: 20px;
-    height: 100px;
+    height: 70px;
     width: 250px;
 }
 
@@ -14,7 +14,7 @@
     height: inherit;
     width: inherit;
     font-family: var(--secondary-font);
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
     color:var(--primary-color);
     opacity: 0.7;
