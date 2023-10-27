@@ -4,7 +4,7 @@ import ExploreIcon from '@mui/icons-material/Explore';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import ScrollRow from './components/scrollrow'
 
-export default function Mains(props) {
+export default function Main(props) {
 
     return (
         <main color-theme={props.theme}>
@@ -13,14 +13,14 @@ export default function Mains(props) {
                     <ExploreIcon className="section-main-header-icon" style={{ fontSize: 50 }}></ExploreIcon>
                     <p className="section-title" id='section-main-header-icon-title'>Explorar</p>
                 </div>
-                <ScrollRow></ScrollRow>
+                <ScrollRow scrollId='0'></ScrollRow>
             </section>
             <section className="section-main">
                 <div className="section-main-header">
                     <FilterAltIcon className="section-main-header-icon" style={{ fontSize: 50 }}></FilterAltIcon>
                     <p className="section-title" id='section-main-header-icon-title'>Filtrar</p>
                 </div>
-                <ScrollRow></ScrollRow>
+                <ScrollRow scrollId='1'></ScrollRow>
             </section>
             <section className="section-main">
                 <div className="section-main-header">
