@@ -4,40 +4,20 @@ import ExploreIcon from '@mui/icons-material/Explore';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import ScrollRow from './components/scrollrow'
 import EventType from './components/eventType'
+import EventSubType from './components/eventSubType'
 
 export default function Main(props) {
-    const names1 = ['Alice', 'Bob', 'Charlie', 'David', 'Eve','Alice', 'Bob', 'Charlie', 'David', 'Eve','Alice', 'Bob', 'Charlie', 'David', 'Eve','Alice', 'Bob', 'Charlie', 'David', 'Eve','Alice', 'Bob', 'Charlie', 'David', 'Eve','Alice', 'Bob', 'Charlie', 'David', 'Eve','Alice', 'Bob', 'Charlie', 'David', 'Eve','Alice', 'Bob', 'Charlie', 'David', 'Eve','Alice', 'Bob', 'Charlie', 'David', 'Eve','Alice', 'Bob', 'Charlie', 'David', 'Eve','Alice', 'Bob', 'Charlie', 'David', 'Eve','Alice', 'Bob', 'Charlie', 'David', 'Eve',];
+    const eventTypes = ['Todos','Música','Culinária','Cutlura'];
 
-    const elements1 = names1.map((nome, index) => (
+    const elements1 = eventTypes.map((nome) => (
       <EventType name={nome}></EventType>
     ));
 
-    const names2 = [
-        "Ana",
-        "João",
-        "Maria",
-        "Pedro",
-        "Sofia",
-        "Lucas",
-        "Camila",
-        "André",
-        "Juliana",
-        "Daniel",
-        "Laura",
-        "Felipe",
-        "Letícia",
-        "Marcelo",
-        "Bruna",
-        "Thiago",
-        "Isabella",
-        "Rafael",
-        "Luana",
-        "Matheus"
-    ];
+    const eventSubTypes = ['Todos','Baladas','Brasilidades','Eletrônicas','Festivais', 'Sertanejos','Universitárias'];
 
-    const elements2 = names2.map((nome, index) => (
-        <EventType name={nome}></EventType>
-    ));
+    const elements2 = eventSubTypes.map((nome) => (
+        <EventSubType name={nome}></EventSubType>
+      ));
 
     return (
         <main color-theme={props.theme}>
@@ -53,7 +33,7 @@ export default function Main(props) {
                     <FilterAltIcon className="section-main-header-icon" style={{ fontSize: 50 }}></FilterAltIcon>
                     <p className="section-title" id='section-main-header-icon-title'>Filtrar</p>
                 </div>
-                <ScrollRow elements={elements2} scrollId='1'></ScrollRow>*/
+                <ScrollRow elements={elements2} scrollId='1'></ScrollRow>
             </section>
             <section className="section-main">
                 <div className="section-main-header">

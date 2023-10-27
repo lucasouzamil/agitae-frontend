@@ -45,7 +45,6 @@ export default function ScrollRow(props) {
     const handleRightArrow = () => {
         let x = scrollX - Math.round(widthItem);
         let listW = nItens * widthItem;
-        console.log(Math.abs(widthScrollViewArea - listW) + ' > ' + Math.abs(x));
         if (Math.abs(widthScrollViewArea - listW) < Math.abs(x)) {
             x = (widthScrollViewArea - listW);
         }
@@ -58,14 +57,12 @@ export default function ScrollRow(props) {
         const childElements = dadElement.children;
         for (let i = 0; i < childElements.length; i++) {
             const childElement = childElements[i];
-            console.log(childElement.id + ' ' + selectedId);
             if (childElement.id === selectedId) {
                 childElement.setAttribute('selected-item', 'true');
             } else {
                 childElement.setAttribute('selected-item', 'false');
             }
         }
-        console.log('');
     };
 
     return (
