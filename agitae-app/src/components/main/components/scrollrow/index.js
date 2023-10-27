@@ -53,15 +53,11 @@ export default function ScrollRow(props) {
         for (let i = 0; i <= (nItens - 1); i++) {
             let item = document.getElementById(i);
             if (i.toString() === selectedId){
-                item.style.scale = "1";
-                item.style.opacity = "1";
+                item.setAttribute('selected-item', 'true');
             } else{
-                item.style.scale = "0.9";
-                item.style.opacity = "0.7";
+                item.setAttribute('selected-item', 'false');
             }
         }
-
-    
     };
 
     return (
@@ -72,25 +68,25 @@ export default function ScrollRow(props) {
             <div className="scrollRow--listarea" id="scrollRow--listarea">
                 <div className="scrollRow--list" style={{ marginLeft: scrollX }}>
                     <div className="item--list" id="item--list">
-                        <div className="item" id="0" onClick={changeMe}>
+                        <div className="item" id="0" selected-item='false' onClick={changeMe}>
                             <div className="teste">0</div>
                         </div>
-                        <div className="item" id="1" onClick={changeMe}>
+                        <div className="item" id="1" selected-item='false' onClick={changeMe}>
                             <div className="teste">1</div>
                         </div>
-                        <div className="item" id="2" onClick={changeMe}>
+                        <div className="item" id="2" selected-item='false' onClick={changeMe}>
                             <div className="teste">2</div>
                         </div>
-                        <div className="item" id="3" onClick={changeMe}>
+                        <div className="item" id="3" selected-item='false' onClick={changeMe}>
                             <div className="teste">3</div>
                         </div>
-                        <div className="item" id="4" onClick={changeMe}>
+                        <div className="item" id="4" selected-item='false' onClick={changeMe}>
                             <div className="teste">4</div>
                         </div>
-                        <div className="item" id="5" onClick={changeMe}>
+                        <div className="item" id="5" selected-item='false' onClick={changeMe}>
                             <div className="teste">5</div>
                         </div>
-                        <div className="item" id="6" onClick={changeMe}>
+                        <div className="item" id="6" selected-item='false' onClick={changeMe}>
                             <div className="teste">6</div>
                         </div>
                     </div>
