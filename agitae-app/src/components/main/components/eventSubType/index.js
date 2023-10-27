@@ -13,9 +13,7 @@ export default function EventSubType(props) {
         return word;
     }
 
-    const word = makeSimple(props.name);
 
-    console.log(word);
 
     return (
         <div className="main">

@@ -5,6 +5,7 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 export default function ScrollRow(props) {
     const [scrollX, setScrollX] = useState(0);
+    const [transitionX, setTransitionX] = useState('on')
     const [widthItem, setItemWidth] = useState(null);
     const [nItens, setNItens] = useState(null);
     const [widthScrollViewArea, setWidthScrollViewArea] = useState(null);
@@ -14,7 +15,7 @@ export default function ScrollRow(props) {
         const calcSizeItemList = () => {
             const itensList = document.getElementById(`item--list-${props.scrollId}`);
             const item = itensList.firstElementChild;
-            const scrollRowListArea = document.getElementById("scrollRow--listarea");
+            const scrollRowListArea = document.getElementById(`scrollRow--listarea-${props.scrollId}`);
             if (item && itensList) {
                 const widthItem = item.offsetWidth;
                 const qntdItens = itensList.childElementCount;
@@ -34,7 +35,24 @@ export default function ScrollRow(props) {
         setWidthScrollViewArea(widthscrollviewArea);
     }, [props.scrollId]);
 
+    const handleScroll = (e) => {
+        setTransitionX('off');
+
+        const scrollAmount = e.deltaX;
+        const newScrollX = scrollX - scrollAmount * 0.1;
+        const listWidth = nItens * widthItem;
+
+        if (newScrollX > 0) {
+            setScrollX(0);
+        } else if (Math.abs(newScrollX) <= listWidth - widthScrollViewArea) {
+            setScrollX(newScrollX);
+        }
+
+    };
+
+
     const handleLeftArrow = () => {
+        setTransitionX('on');
         let x = Math.round(scrollX + widthItem);
         if (x > 0) {
             x = 0;
@@ -43,6 +61,7 @@ export default function ScrollRow(props) {
     };
 
     const handleRightArrow = () => {
+        setTransitionX('on');
         let x = scrollX - Math.round(widthItem);
         let listW = nItens * widthItem;
         if (Math.abs(widthScrollViewArea - listW) < Math.abs(x)) {
@@ -70,8 +89,8 @@ export default function ScrollRow(props) {
             <div className="scrollRow-left" onClick={handleLeftArrow}>
                 <KeyboardArrowLeftIcon className="iconeScrollLeft" style={{ fontSize: 50 }}></KeyboardArrowLeftIcon>
             </div>
-            <div className="scrollRow--listarea" id="scrollRow--listarea">
-                <div className="scrollRow--list" style={{ marginLeft: scrollX }}>
+            <div className={`scrollRow--listarea`} id={`scrollRow--listarea-${props.scrollId}`} onWheel={handleScroll}>
+                <div className="scrollRow--list" transition-mode = {transitionX} style={{ marginLeft: scrollX }}>
                     <div className="item--list" id={`item--list-${props.scrollId}`}>
                         {
                             props.elements.map((element, i) => (

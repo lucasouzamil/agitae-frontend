@@ -7,13 +7,13 @@ import EventType from './components/eventType'
 import EventSubType from './components/eventSubType'
 
 export default function Main(props) {
-    const eventTypes = ['Todos','Música','Culinária','Cutlura'];
+    const eventTypes = ['Todos','Música','Culinária','Cultura'];
 
     const elements1 = eventTypes.map((nome) => (
       <EventType name={nome}></EventType>
     ));
 
-    const eventSubTypes = ['Todos','Baladas','Brasilidades','Eletrônicas','Festivais', 'Sertanejos','Universitárias'];
+    const eventSubTypes = ['Todos','Baladas','Brasilidades','Eletrônicas','Festivais', 'Sertanejos','Universitárias','Todos','Baladas','Brasilidades','Eletrônicas','Festivais', 'Sertanejos','Universitárias','Todos','Baladas','Brasilidades','Eletrônicas','Festivais', 'Sertanejos','Universitárias'];
 
     const elements2 = eventSubTypes.map((nome) => (
         <EventSubType name={nome}></EventSubType>
