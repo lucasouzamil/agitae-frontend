@@ -20,6 +20,7 @@ export default function Mains(props) {
                     <FilterAltIcon className="section-main-header-icon" style={{ fontSize: 50 }}></FilterAltIcon>
                     <p className="section-title" id='section-main-header-icon-title'>Filtrar</p>
                 </div>
+                <ScrollRow></ScrollRow>
             </section>
             <section className="section-main">
                 <div className="section-main-header">
