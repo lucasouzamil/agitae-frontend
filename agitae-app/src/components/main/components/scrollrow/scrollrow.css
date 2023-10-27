@@ -20,7 +20,7 @@
 
 .item {
     display: inline-block;
-    transform: scale(0.9);
+    scale: 0.9;
     opacity: 0.7;
     transition: all 0.2s ease;
     cursor: pointer;
@@ -29,13 +29,13 @@
 }
 
 .item:hover {
-    transform: scale(1);
+    scale: 1;
     opacity: 1;
 }
 
 .teste {
     height: 200px;
-    width: 300px;
+    width: 200px;
     background-color: white;
 }
 

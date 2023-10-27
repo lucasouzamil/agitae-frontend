@@ -5,7 +5,6 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 export default function ScrollRow(props) {
     const [scrollX, setScrollX] = useState(0);
-
     const [widthItem, setItemWidth] = useState(null);
     const [nItens, setNItens] = useState(null);
     const [widthScrollViewArea, setWidthScrollViewArea] = useState(null);
@@ -18,7 +17,7 @@ export default function ScrollRow(props) {
     }, []);
 
     const calcSizeItemList = () => {
-        const item = document.getElementById("teste");
+        const item = document.getElementById("0");
         const itensList = document.getElementById("item--list");
         const scrollRowListArea = document.getElementById("scrollRow--listarea");
         if (item && itensList) {
@@ -30,25 +29,39 @@ export default function ScrollRow(props) {
         return [null, null, null];
     };
 
-
-    console.log('');
-
     const handleLeftArrow = () => {
-        if (scrollX + widthItem > 0) {
-            setScrollX(scrollX);
-        } else (
-            setScrollX(scrollX + widthItem)
-        );
-        console.log('Margem: ' + scrollX + ' Largura total: ' + (nItens * widthItem));
+        let x = Math.round(scrollX + widthItem);
+        if (x > 0) {
+            x = 0;
+        }
+        setScrollX(x);
     };
 
     const handleRightArrow = () => {
-        if (Math.abs(scrollX + widthItem) > ((nItens * widthItem) - widthScrollViewArea)) {
-            setScrollX(scrollX);
-        } else (
-            setScrollX(scrollX - widthItem)
-        );
-        console.log('Margem: ' + Math.abs(scrollX+widthItem) + ' Largura:' + ((nItens * widthItem) - widthScrollViewArea));
+        let x = scrollX - Math.round(widthItem);
+        let listW = nItens * widthItem;
+        console.log(Math.abs(widthScrollViewArea - listW) + ' > ' + Math.abs(x));
+        if (Math.abs(widthScrollViewArea - listW) < Math.abs(x)) {
+            x = (widthScrollViewArea - listW);
+        }
+        setScrollX(x);
+    };
+
+    const changeMe = (event) => {
+        const selectedId = event.currentTarget.id;
+        console.log(typeof(selectedId));
+        for (let i = 0; i <= (nItens - 1); i++) {
+            let item = document.getElementById(i);
+            if (i.toString() === selectedId){
+                item.style.scale = "1";
+                item.style.opacity = "1";
+            } else{
+                item.style.scale = "0.9";
+                item.style.opacity = "0.7";
+            }
+        }
+
+    
     };
 
     return (
@@ -59,13 +72,27 @@ export default function ScrollRow(props) {
             <div className="scrollRow--listarea" id="scrollRow--listarea">
                 <div className="scrollRow--list" style={{ marginLeft: scrollX }}>
                     <div className="item--list" id="item--list">
-                        <div className="item" id="teste"><div className="teste">1</div></div>
-                        <div className="item"><div className="teste">2</div></div>
-                        <div className="item"><div className="teste">3</div></div>
-                        <div className="item"><div className="teste">4</div></div>
-                        <div className="item"><div className="teste">5</div></div>
-                        <div className="item"><div className="teste">6</div></div>
-                        <div className="item"><div className="teste">7</div></div>
+                        <div className="item" id="0" onClick={changeMe}>
+                            <div className="teste">0</div>
+                        </div>
+                        <div className="item" id="1" onClick={changeMe}>
+                            <div className="teste">1</div>
+                        </div>
+                        <div className="item" id="2" onClick={changeMe}>
+                            <div className="teste">2</div>
+                        </div>
+                        <div className="item" id="3" onClick={changeMe}>
+                            <div className="teste">3</div>
+                        </div>
+                        <div className="item" id="4" onClick={changeMe}>
+                            <div className="teste">4</div>
+                        </div>
+                        <div className="item" id="5" onClick={changeMe}>
+                            <div className="teste">5</div>
+                        </div>
+                        <div className="item" id="6" onClick={changeMe}>
+                            <div className="teste">6</div>
+                        </div>
                     </div>
                 </div>
             </div>
