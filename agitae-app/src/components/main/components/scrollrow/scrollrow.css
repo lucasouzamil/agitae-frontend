@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     --opacity-selected: None;
     --scale-selected: None;
@@ -92,4 +97,12 @@
 
 .scrollRow-left:hover {
     scale: 1;
+}
+
+
+@media (max-width:760px) {
+    .scrollRow-left,
+    .scrollRow-right{
+        opacity: 1;
+    }
 }

@@ -34,13 +34,13 @@ export default function Header(props) {
             <Publisher inscreen={publisherVisible} setvisible={changePublishVisibile}></Publisher>
             <div>
                 <button className='btn-header' onClick={changePublishVisibile}>
-                    <AddCircleIcon className='icon-header' style={{ fontSize: 50 }}></AddCircleIcon>
+                    <AddCircleIcon className='icon-header' style={{ fontSize: 45 }}></AddCircleIcon>
                 </button>
             </div>
             <h1 className="titulo">LOGO</h1>
             <div>
                 <button className='btn-header' onClick={props.changeTheme}>
-                    <DarkModeIcon className='icon-header' style={{ fontSize: 50 }}></DarkModeIcon>
+                    <DarkModeIcon className='icon-header' style={{ fontSize: 45 }}></DarkModeIcon>
                 </button>
             </div>
         </header>

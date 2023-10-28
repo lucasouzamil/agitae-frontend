@@ -38,3 +38,12 @@ header {
 .icon-header{
     color:var(--tertiary-color-oposite);
 }
+
+@media (max-width:760px) {
+    .titulo{
+        font-size: 40px;
+    }
+    header{
+        height: 80px;
+    }
+}

@@ -1,5 +1,6 @@
 .section-publisher {
     position: fixed;
+    z-index: 99999;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -13,16 +14,19 @@
     background-color: var(--primary-color);
     padding: 10px;
 }
+
 [in-screen='false'] {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
 [in-screen='false'] {
     left: -150%;
 }
-.icon-x{
-    color:var(--tertiary-color-oposite);
+
+.icon-x {
+    color: var(--tertiary-color-oposite);
 }
 
 .header-publisher {
@@ -47,7 +51,18 @@
     width: 40px;
     border-radius: 50%;
 }
+
 .btn-x-publisher:hover {
     scale: 1.08;
     background-color: var(--secondary-color);
+}
+
+
+@media (max-width:760px) {
+    .section-publisher {
+        width: 90vw;
+        height: 90vh;
+        max-height: 100vh;
+        max-width: 100vw;
+    }
 }
