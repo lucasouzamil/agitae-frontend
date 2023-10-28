@@ -12,7 +12,7 @@ export default function Event(props) {
             <div className='blockImg'>
                 <img className='eventImage' src="https://cajamar.sp.gov.br/noticias/wp-content/uploads/sites/2/2023/09/image.png" alt='teste' />
             </div>
-            <p className='eventoTitle'>Gioconda Ventura</p>
+            <p className='eventoTitle'>Workshop de Focaccia</p>
             <div className='eventInfo'>
                 <CalendarMonthIcon className="iconData" style={{ fontSize: '20px' }}></CalendarMonthIcon>
                 <p className='eventInfoData'>xx/xx/xxxx</p>
