@@ -50,7 +50,6 @@ export default function ScrollRow(props) {
 
     };
 
-
     const handleLeftArrow = () => {
         setTransitionX('on');
         let x = Math.round(scrollX + widthItem);

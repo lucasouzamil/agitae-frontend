@@ -7,13 +7,13 @@ import Db from './db.js'
 
 function App() {
   const [theme, setTheme] = useState('dark');
-
+  const [DB, setDB] = useState({});
+  
   useEffect(() => {
     const loadAll = async () => {
       let db = await Db.getDb();
-      console.log(db);
+      setDB(db);
     }
-
     loadAll();
   }, []);
 
@@ -27,8 +27,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header theme={theme} changeTheme={changeTheme} />
-      <Main theme={theme} />
+      <Header theme={theme} changeTheme={changeTheme} db={DB}/>
+      <Main theme={theme}  db={DB}/>
       <Footer theme={theme}></Footer>
     </div>
   );

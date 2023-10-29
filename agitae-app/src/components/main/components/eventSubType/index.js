@@ -15,9 +15,9 @@ export default function EventSubType(props) {
 
 
     return (
-        <div className="main-eventsubtype">
+        <div className="main-eventsubtype" onClick={() => props.setSubType(props.db_id)}>
             <div className="blockIcon-eventsubtype">
-                <img className="icon-eventsubtype" src={`/assets/iconeseventos/musica/${makeSimple(props.name)}-white.png`} alt='teste' />
+                <img className="icon-eventsubtype" src={`/assets/iconeseventos/${makeSimple(props.type)}/${makeSimple(props.name)}-white.png`} alt='teste' />
             </div>
             <p className="textType-eventsubtype">{props.name}</p>
         </div>
