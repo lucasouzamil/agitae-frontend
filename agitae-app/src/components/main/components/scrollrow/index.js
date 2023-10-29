@@ -26,6 +26,11 @@ export default function ScrollRow(props) {
         };
 
         const dadElement = document.getElementById(`item--list-${props.scrollId}`);
+        const childElements = dadElement.children;
+        for (let i = 0; i < childElements.length; i++) {
+            const childElement = childElements[i];
+            childElement.setAttribute('selected-item', 'false');
+        }
         const firstChild = dadElement.querySelector(":first-child");
         firstChild.setAttribute('selected-item', 'true');
 
@@ -33,7 +38,8 @@ export default function ScrollRow(props) {
         setItemWidth(widthitem);
         setNItens(nitems);
         setWidthScrollViewArea(widthscrollviewArea);
-    }, [props.scrollId]);
+        setScrollX(0);
+    }, [props.change, props.scrollId]);
 
     const handleScroll = (e) => {
         setTransitionX('off');
@@ -89,7 +95,7 @@ export default function ScrollRow(props) {
                 <KeyboardArrowLeftIcon className="iconeScrollLeft" style={{ fontSize: 50 }}></KeyboardArrowLeftIcon>
             </div>
             <div className={`scrollRow--listarea`} id={`scrollRow--listarea-${props.scrollId}`} onWheel={handleScroll}>
-                <div className="scrollRow--list" transition-mode = {transitionX} style={{ marginLeft: scrollX }}>
+                <div className="scrollRow--list" transition-mode={transitionX} style={{ marginLeft: scrollX }}>
                     <div className="item--list" id={`item--list-${props.scrollId}`}>
                         {
                             props.elements.map((element, i) => (

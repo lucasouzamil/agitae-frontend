@@ -171,7 +171,7 @@ export default function Main(props) {
                     <FilterAltIcon className="section-main-header-icon" style={{ fontSize: 40 }}></FilterAltIcon>
                     <p className="section-title" id='section-main-header-icon-title'>Filtrar</p>
                 </div>
-                <ScrollRow elements={elements2} scrollId='1'></ScrollRow>
+                <ScrollRow elements={elements2} scrollId='1' change={selectedType}></ScrollRow>
             </section>
             <section className="section-main">
                 <div className="section-main-header">
