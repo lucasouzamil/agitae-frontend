@@ -15,11 +15,13 @@ const basicFetch = async (endpoint) => {
 const Db = {
     getDb: async () => {
         try {
-            const event_types = await basicFetch('eventtypes/api/');
-            const event_sub_types = await basicFetch('eventsubtypes/api/');
-            const events = await basicFetch('events/api/');
+            const db = {
+                event_types: await basicFetch('eventtypes/api/'),
+                event_sub_types: await basicFetch('eventsubtypes/api/'),
+                events: await basicFetch('events/api/'),
+            }
 
-            const all_event_types = {
+            /* const all_event_types = {
                 id: 0,
                 name: 'Todos',
                 subtypes: event_sub_types.map((subtype) => subtype.id),
@@ -36,11 +38,10 @@ const Db = {
                 events: events,
                 event_types: [all_event_types, ...event_types],
                 event_sub_types: [all_events, ...event_sub_types],
-            };
+            }; */
 
-            console.log(db);
             return db;
-            
+
         } catch (error) {
             console.error("Erro ao buscar dados:", error);
             return null;

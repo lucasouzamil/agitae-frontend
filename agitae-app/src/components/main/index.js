@@ -176,7 +176,7 @@ export default function Main(props) {
             <section className="section-main">
                 <div className="section-main-header">
                     <LocationSearchingIcon className="section-main-header-icon" style={{ fontSize: 40 }}></LocationSearchingIcon>
-                    <p className="section-title">Eventos</p>
+                    <p className="section-title" styles={{color:'white'}}>Eventos</p>
                 </div>
                 <div className="events">
                     <Event></Event>

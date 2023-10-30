@@ -1,0 +1,222 @@
+
+.fitInput{
+    display: flex;
+    flex-direction: row;
+}
+
+.blockImageInput {
+    position: relative;
+    background-color: white;
+    width: 400px;
+    height: 225px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.ImageInput {
+    width: 100%;
+    object-fit: cover; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    border-radius: 10px;
+}
+
+.headerForm{
+    display: flex;
+    flex-direction: row;
+}
+
+.headerinputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 10px;
+}
+
+#description-input{
+    height: 100px;
+    display: flex;
+    align-items: flex-end;
+    resize: none;
+}
+
+
+
+/* Form container */
+form {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: space-between;
+    margin: 0 auto;
+    background-color: transparent;
+    border-radius: 10px;
+    top:10;
+    left:10;
+    width: calc(100% - 50px);
+    height: calc(100% - 100px);
+    
+}
+
+/* Input fields */
+.input-form {
+    background-color: var(--tertiary-color);
+    color: var(--tertiary-color-oposite);
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    font-family: var(--secondary-font)
+}
+
+.input-form:focus {
+    outline: 3px solid var(--primary-color-oposite);
+}
+
+
+/* Button */
+.btn-form {
+    background-color: #007BFF;
+    width: 200px;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.btn-form:hover {
+    transform: scale(1.1);
+}
+
+/* Warning text */
+.warning-text {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* File input - Hidden by default */
+.input-form[type="file"] {
+    display: none;
+}
+
+/* File input wrapper - Customize the appearance of the file input */
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.btn-file {
+    border: 2px solid gray;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 20px;
+    cursor: pointer;
+}
+
+.upload-btn-wrapper input[type="file"] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Customize the label for the file input */
+.custom-file-label {
+    background-color: #007BFF;
+    color: #fff;
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.custom-file-label:hover {
+    background-color: #0056b3;
+}
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.btn-file {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-file:hover {
+    background-color: #0056b3;
+}
+
+/* Customize the label for the file input */
+.custom-file-label {
+    background-color: #007BFF;
+    color: #fff;
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.custom-file-label:hover {
+    background-color: #0056b3;
+}
+
+.number-data-form {
+    display: flex;
+    flex-direction: row;
+}
+
+.estado-cidade {
+    display: flex;
+    flex-direction: row;
+}
+
+.neighborhood-street-number{
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-form{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+@media (max-width:760px) {
+    .section-publisher {
+        width: 90vw;
+        height: 90vh;
+        max-height: 100vh;
+        max-width: 100vw;
+    }
+}
