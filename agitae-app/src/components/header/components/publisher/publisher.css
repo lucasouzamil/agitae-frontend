@@ -57,6 +57,17 @@
     background-color: var(--secondary-color);
 }
 
+.main-publisher{
+    width: 100%;
+    height: calc(100% - 45px);
+    border: solid 5px var(--primary-color-oposite);
+}
+
+.warning-text{
+    color: white;
+    font-size: 40px;
+}
+
 
 @media (max-width:760px) {
     .section-publisher {
