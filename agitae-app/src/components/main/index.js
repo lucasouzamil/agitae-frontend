@@ -176,6 +176,7 @@ export default function Main(props) {
         setSelectedSubType(filteredSubTypes[0].id);
     };
 
+
     const typesElements = typesData.map((item) => (
         <EventType name={item.name} db_id={item.id} setType={changeType} ></EventType>
     ));
@@ -190,6 +191,8 @@ export default function Main(props) {
     const filteredEvents = elements.filter(item => filteredEventsId.includes(item.id));
 
 
+    const typeName = (typesData.find((type) => type.id === selectedType)).name;
+    const subTypeName = (subTypesData.find((type) => type.id === selectedSubType)).name;
 
 
 
@@ -207,14 +210,14 @@ export default function Main(props) {
             <section className="section-main">
                 <div className="section-main-header">
                     <FilterAltIcon className="section-main-header-icon" style={{ fontSize: 40 }}></FilterAltIcon>
-                    <p className="section-title" id='section-main-header-icon-title'>Filtrar</p>
+                    <p className="section-title" id='section-main-header-icon-title'>{typeName}</p>
                 </div>
                 <ScrollRow elements={subTypesElements} scrollId='1' change={selectedType}></ScrollRow>
             </section>
             <section className="section-main">
                 <div className="section-main-header">
                     <LocationSearchingIcon className="section-main-header-icon" style={{ fontSize: 40 }}></LocationSearchingIcon>
-                    <p className="section-title">Eventos</p>
+                    <p className="section-title">{subTypeName}</p>
                 </div>
                 <div className="events">
                     {filteredEvents.map((item) => (
