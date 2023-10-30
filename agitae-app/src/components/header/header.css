@@ -13,9 +13,27 @@ header {
     left :0;
     transition: top 0.3s ease;
 }
-.logo{
-    height: 200px;
-    width: auto;
+.blockImageLogo {
+    position: relative;
+    background-color: transparent;
+    height: 100px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.ImageLogo {
+    width: 100%;
+    object-fit: cover; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    border-radius: 10px;
 }
 .btn-header {
     margin:0;

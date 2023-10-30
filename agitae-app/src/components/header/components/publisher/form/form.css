@@ -1,14 +1,19 @@
 
+* {
+    font-size: 16px;
+    font-family: var(--secondary-font);
+}
+
 .fitInput{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .blockImageInput {
     position: relative;
     background-color: white;
-    width: 400px;
-    height: 225px;
+    width: 450px;
+    height: 253px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,7 +46,6 @@
 }
 
 #description-input{
-    height: 100px;
     display: flex;
     align-items: flex-end;
     resize: none;
@@ -75,9 +79,7 @@ form {
     margin: 0;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
     transition: border-color 0.3s;
-    font-family: var(--secondary-font)
 }
 
 .input-form:focus {
@@ -87,9 +89,9 @@ form {
 
 /* Button */
 .btn-form {
-    background-color: #007BFF;
+    background-color: var(--primary-color-oposite);
     width: 200px;
-    color: #fff;
+    color: var(--primary-color);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -104,7 +106,6 @@ form {
 
 /* Warning text */
 .warning-text {
-    font-size: 20px;
     margin-right: 10px;
 }
 
@@ -113,25 +114,14 @@ form {
     display: none;
 }
 
-/* File input wrapper - Customize the appearance of the file input */
-.upload-btn-wrapper {
-    position: relative;
-    overflow: hidden;
-    display: inline-block;
+
+.upload-btn-wrapper{
+    position: absolute;
+    top:0;
 }
 
-.btn-file {
-    border: 2px solid gray;
-    background-color: #f8f8f8;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 8px 20px;
-    cursor: pointer;
-}
 
 .upload-btn-wrapper input[type="file"] {
-    font-size: 100px;
     position: absolute;
     left: 0;
     top: 0;
@@ -139,20 +129,14 @@ form {
     cursor: pointer;
 }
 
-/* Customize the label for the file input */
-.custom-file-label {
-    background-color: #007BFF;
-    color: #fff;
-    border: 2px solid #007BFF;
-    border-radius: 5px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
+.btnposition{
+    position: absolute;
+    top:10px;
+    left: 10px;
 }
 
 .custom-file-label:hover {
-    background-color: #0056b3;
+    background-color: var(--secondary-color);
 }
 
 .upload-btn-wrapper {
@@ -161,25 +145,56 @@ form {
     display: inline-block;
 }
 
+
+
 .btn-file {
-    background-color: #007BFF;
-    color: #fff;
+    background-color: var(--primary-color-oposite);
+    color: var(--primary-color);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+    transition: all 0.2 ease;
+}
+
+.subtypes-choices{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.selectArea{
+    display: flex;
+    flex-direction: column;
+}
+.optionsInput{
+    padding: 5px;
+    background-color: var(--tertiary-color);
+    color: var(--tertiary-color-oposite);
+    border-radius: 5px;
+    border: none;
+}
+.optionsInput:focus {
+    outline: none;
+    border-radius: 5px 5px 0px 0px;
+}
+.option{
+    background-color: var(--tertiary-color);
+    border-radius: 10px;
+}
+.optionsInput:focus {
+    outline: none;
+    border: none;
 }
 
 .btn-file:hover {
-    background-color: #0056b3;
+    background-color: var(--primary-color-oposite);
 }
 
-/* Customize the label for the file input */
 .custom-file-label {
-    background-color: #007BFF;
+    background-color: var(--primary-color-oposite);
     color: #fff;
-    border: 2px solid #007BFF;
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
@@ -187,23 +202,41 @@ form {
     transition: background-color 0.3s;
 }
 
-.custom-file-label:hover {
-    background-color: #0056b3;
-}
-
 .number-data-form {
+    width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+}
+
+.fitInput#date,.fitInput#time{
+    width: 48%;
+}
+
+.fitInput#local-name,.fitInput#state,.fitInput#city{
+    width: 30%;
+}
+
+.fitInput#neighborhood,.fitInput#street,.fitInput#number{
+    width: 30%;
+}
+
+.label{
+    margin: 0;
+    margin-bottom: 5px;
+    color: var(--primary-color-oposite)
 }
 
 .estado-cidade {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .neighborhood-street-number{
     display: flex;
     flex-direction: row;
+    justify-content: space-between ;
 }
 
 .footer-form{
