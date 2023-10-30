@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import Db from "../../db";
+import React, { useState, useEffect } from "react";
 import './main.css'
 import ExploreIcon from '@mui/icons-material/Explore';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
@@ -10,7 +11,7 @@ import Event from './components/event'
 
 export default function Main(props) {
 
-    const typesData = [
+    /* const typesData = [
         {
             "id": "b3ada38c-4f38-4436-88c9-5e5aa6a53526",
             "name": "Culinária",
@@ -133,10 +134,40 @@ export default function Main(props) {
             "name": "Universitárias",
             "events": []
         }
-    ];
+    ]; */
 
-    const [selectedType, setSelectedType] = useState(typesData[0].id);
-    const [selectedSubType, setSelectedSubType] = useState(subTypesData[0].id);
+    const [elements, setElements] = useState([]);
+    const [typesData, setTypesData] = useState([]);
+    const [subTypesData, setSubTypesData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [selectedType, setSelectedType] = useState(null);
+    const [selectedSubType, setSelectedSubType] = useState(null);
+
+    useEffect(() => {
+        Db.getDb()
+            .then((res) => {
+                console.log(res);
+                setElements(res.events);
+                setTypesData(res.event_types);
+                setSubTypesData(res.event_sub_types);
+                if (res.event_types.length > 0) {
+                    setSelectedType(res.event_types[0].id);
+                }
+                if (res.event_sub_types.length > 0) {
+                    setSelectedSubType(res.event_sub_types[0].id);
+                }
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error('Erro ao buscar os dados da API', error);
+                setLoading(false);
+            });
+    }, []);
+
+
+    if (loading) {
+        return <div>Carregando...</div>;
+    }
 
     const changeType = (typeId) => {
         setSelectedType(typeId);
@@ -145,17 +176,24 @@ export default function Main(props) {
         setSelectedSubType(filteredSubTypes[0].id);
     };
 
-    const elements1 = typesData.map((item) => (
+    const typesElements = typesData.map((item) => (
         <EventType name={item.name} db_id={item.id} setType={changeType} ></EventType>
     ));
-
     const type = typesData.find((type) => type.id === selectedType);
     const filteredSubTypes = subTypesData.filter((item) => type.subtypes.includes(item.id));
-    const elements2 = filteredSubTypes.map((item) => (
+    const subTypesElements = filteredSubTypes.map((item) => (
         <EventSubType type={type.name} db_id={item.id} name={item.name} setSubType={setSelectedSubType} ></EventSubType>
     ));
 
-    console.log(typesData.find((type) => type.id === selectedType).name, subTypesData.find((subType) => subType.id === selectedSubType).name);
+    const subType = subTypesData.find(item => item.id === selectedSubType);
+    const filteredEventsId = subType.events;
+    const filteredEvents = elements.filter(item => filteredEventsId.includes(item.id));
+
+
+
+
+
+    //console.log(typesData.find((type) => type.id === selectedType).name, subTypesData.find((subType) => subType.id === selectedSubType).name);
 
     return (
         <main color-theme={props.theme}>
@@ -164,30 +202,24 @@ export default function Main(props) {
                     <ExploreIcon className="section-main-header-icon" style={{ fontSize: 40 }}></ExploreIcon>
                     <p className="section-title" id='section-main-header-icon-title'>Explorar</p>
                 </div>
-                <ScrollRow elements={elements1} scrollId='0'></ScrollRow>
+                <ScrollRow elements={typesElements} scrollId='0'></ScrollRow>
             </section>
             <section className="section-main">
                 <div className="section-main-header">
                     <FilterAltIcon className="section-main-header-icon" style={{ fontSize: 40 }}></FilterAltIcon>
                     <p className="section-title" id='section-main-header-icon-title'>Filtrar</p>
                 </div>
-                <ScrollRow elements={elements2} scrollId='1' change={selectedType}></ScrollRow>
+                <ScrollRow elements={subTypesElements} scrollId='1' change={selectedType}></ScrollRow>
             </section>
             <section className="section-main">
                 <div className="section-main-header">
                     <LocationSearchingIcon className="section-main-header-icon" style={{ fontSize: 40 }}></LocationSearchingIcon>
-                    <p className="section-title" styles={{color:'white'}}>Eventos</p>
+                    <p className="section-title">Eventos</p>
                 </div>
                 <div className="events">
-                    <Event></Event>
-                    <Event></Event>
-                    <Event></Event>
-                    <Event></Event>
-                    <Event></Event>
-                    <Event></Event>
-                    <Event></Event>
-                    <Event></Event>
-                    <Event></Event>
+                    {filteredEvents.map((item) => (
+                        <Event key={`note__${item.id}`} eventdata={item}></Event>
+                    ))}
                 </div>
             </section>
         </main>

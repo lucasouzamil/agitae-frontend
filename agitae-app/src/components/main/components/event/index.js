@@ -6,21 +6,30 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 export default function Event(props) {
 
+    console.log(props.eventdata.url);
 
+    let img = null;
+
+    if (props.eventdata.image){
+        img = `http://127.0.0.1:8000${props.eventdata.image}`;
+    } else {
+        img = 'assets/img/placeholder_image.png';
+    }
+    
     return (
         <div className='main'>
             <div className='blockImg'>
-                <img className='eventImage' src="https://cajamar.sp.gov.br/noticias/wp-content/uploads/sites/2/2023/09/image.png" alt='teste' />
+                <img className='eventImage' src={img} alt='teste' />
             </div>
             <div className="infos">
-                <p className='eventTitle'>Workshop de Focaccia</p>
+                <p className='eventTitle'>{props.eventdata.name}</p>
                 <div className='eventInfo'>
                     <CalendarMonthIcon className="iconData" style={{ fontSize: '20px' }}></CalendarMonthIcon>
-                    <p className='eventInfoData'>xx/xx/xxxx</p>
+                    <p className='eventInfoData'>{props.eventdata.date}</p>
                 </div>
                 <div className='eventInfo'>
                     <RoomIcon className="iconData" style={{ fontSize: '20px' }}></RoomIcon>
-                    <p className='eventInfoData'>Komplexo Tempo</p>
+                    <p className='eventInfoData'>{props.eventdata.local_name}</p>
                 </div>
             </div>
         </div>

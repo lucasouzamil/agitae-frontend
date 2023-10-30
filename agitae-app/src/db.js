@@ -43,6 +43,7 @@ const Db = {
             return db;
 
         } catch (error) {
+            console.log('[ERROR]')
             console.error("Erro ao buscar dados:", error);
             return null;
         }

@@ -23,7 +23,7 @@ export default function Header(props) {
         if (prevScrollPos > currentScrollPos) {
             document.querySelector('header').style.top = '0';
         } else {
-            document.querySelector('header').style.top = '-108px'; // Altura do cabeçalho
+            document.querySelector('header').style.top = '-108px';
         }
 
         prevScrollPos = currentScrollPos;
@@ -37,7 +37,6 @@ export default function Header(props) {
                     <AddCircleIcon className='icon-header' style={{ fontSize: 45 }}></AddCircleIcon>
                 </button>
             </div>
-            {/*<h1 className="titulo">LOGO</h1>*/}
             <div className="blockImageLogo">
                 <img className="ImageLogo" src='assets/img/logo8.png' alt="Logo agitae" />
             </div>

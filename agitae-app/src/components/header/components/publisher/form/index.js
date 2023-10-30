@@ -112,7 +112,6 @@ function formCheck(formData) {
     }
     return ''
 }
-
 export default function Form(props) {
 
     const typesData = [
