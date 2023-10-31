@@ -16,38 +16,49 @@ const Db = {
     getDb: async () => {
         try {
             const db = {
+                events: await basicFetch('events/api/'),
                 event_types: await basicFetch('eventtypes/api/'),
                 event_sub_types: await basicFetch('eventsubtypes/api/'),
-                events: await basicFetch('events/api/'),
-            }
-
-            /* const all_event_types = {
-                id: 0,
-                name: 'Todos',
-                subtypes: event_sub_types.map((subtype) => subtype.id),
             };
-
-            const all_events = {
-                id: 0,
-                name: 'Todos',
-                events: events.map((event) => event.id),
-            };
-            
-
-            const db = {
-                events: events,
-                event_types: [all_event_types, ...event_types],
-                event_sub_types: [all_events, ...event_sub_types],
-            }; */
 
             return db;
-
         } catch (error) {
-            console.log('[ERROR]')
+            console.log('[ERROR]');
             console.error("Erro ao buscar dados:", error);
             return null;
         }
     },
+
+    getEvents: async () => {
+        try {
+            console.log('PEGA EVENTOOO')
+            const evensts = await basicFetch('events/api/');
+            return evensts;
+        } catch (error) {
+            console.log('[ERROR]');
+            console.error("Erro ao buscar eventos:", error);
+        }
+    },
+
+    getTypes: async () => {
+        try {
+            const event_types = await basicFetch('eventtypes/api/');
+            return event_types;
+        } catch (error) {
+            console.log('[ERROR]');
+            console.error("Erro ao buscar tipos de eventos:", error);
+        }
+    },
+
+    getSubTypes: async () => {
+        try {
+            const event_sub_types = await basicFetch('eventsubtypes/api/');
+            return event_sub_types;
+        } catch (error) {
+            console.log('[ERROR]');
+            console.error("Erro ao buscar subtipos:", error);
+        }
+    }
 };
 
 export default Db;

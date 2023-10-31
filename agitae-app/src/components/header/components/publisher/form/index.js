@@ -21,7 +21,7 @@ async function postEvent(eventData) {
         return error;
     }
 }
-function addEventToSubType(eventId, subtypeid) {
+async function addEventToSubType(eventId, subtypeid, setElements) {
     const data = {
         event: eventId
     };
@@ -45,17 +45,15 @@ function addEventToSubType(eventId, subtypeid) {
         .catch(error => {
             console.error('Erro ao adicionar evento:', error);
         });
+
+    setElements(await Db.getDb());
 }
 async function checkEventExistence(eventData) {
-    const db = await Db.getDb();
-    const events = db.events;
+    const events = await Db.getEvents();
 
     for (let key in events) {
         const event = events[key];
-        console.log('nomes: ' + event.name + ' ' + eventData.get('name'));
-        console.log('urls: ' + event.url + ' ' + eventData.get('url'));
-        console.log('\n\n\n');
-        if (event.name === eventData.get('name') || event.url === eventData.get('url')) {
+        if (event.url === eventData.get('url')) {
             return true;
         }
     }
@@ -275,7 +273,7 @@ export default function Form(props) {
                 const subtype_id = element.value;
                 const event = await postEvent(formData);
                 console.log(subtype_id, event.id);
-                addEventToSubType(event.id, subtype_id);
+                addEventToSubType(event.id, subtype_id, props.reloadEvents);
             }
         }
     };
