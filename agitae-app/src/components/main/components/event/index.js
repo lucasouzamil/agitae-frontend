@@ -17,8 +17,6 @@ export default function Event(props) {
     }
 
     const date = props.eventdata.date.split('-');
-    console.log('$$$$$$$');
-    console.log(date[0])
     
     return (
         <div className='main' onClick={props.viewEventPage}>

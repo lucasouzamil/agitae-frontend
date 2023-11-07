@@ -17,11 +17,13 @@ export default function Main(props) {
     const [filteredSubTypes, setFilteredSubTypes] = useState([]);
     const [filteredEvents, setFilteredEvents] = useState([]);
 
-    const [eventPageVisibility, setEventPageVisibility] = useState('false')
+    const [eventPageVisibility, setEventPageVisibility] = useState('false');
+    const [visibleEventId, setVisibleEventId] = useState(null);
 
-    const viewEventPage = () => {
-        console.log('WOOOW');
+    const viewEventPage = (eventId) => {
+        console.log(eventId);
         setEventPageVisibility('true');
+        setVisibleEventId(eventId);
     };
 
 
@@ -53,6 +55,7 @@ export default function Main(props) {
         const filteredEventsId = subType.events;
         setFilteredEvents(props.events.filter(item => filteredEventsId.includes(item.id)));
     }, [props.eventSubTypes, selectedSubType, props.events]);
+
 
     return (
         <main color-theme={props.theme}>
@@ -91,10 +94,10 @@ export default function Main(props) {
                 </div>
                 <div className="events">
                     {filteredEvents.map((item) => (
-                        <Event key={`note__${item.id}`} eventdata={item} viewEventPage={viewEventPage} ></Event>
+                        <Event key={`note__${item.id}`} eventdata={item} viewEventPage={()=>viewEventPage(item.id)} ></Event>
                     ))}
                 </div>
-                <EventPage inscreen={eventPageVisibility} setvisible={()=>setEventPageVisibility('false')} ></EventPage>
+                <EventPage events={props.events} visibleEventId={visibleEventId} inscreen={eventPageVisibility} setvisible={()=>setEventPageVisibility('false')} ></EventPage>
             </section>
         </main>
     );
