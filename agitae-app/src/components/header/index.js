@@ -31,7 +31,7 @@ export default function Header(props) {
 
     return (
         <header color-theme={props.theme}>
-            <Publisher inscreen={publisherVisible} setvisible={changePublishVisibile} reloadEvents={props.reloadEvents}></Publisher>
+            <Publisher inscreen={publisherVisible} setvisible={changePublishVisibile} reloadEvents={props.reloadEvents} db={props.db}></Publisher>
             <div>
                 <button className='btn-header' onClick={changePublishVisibile}>
                     <AddCircleIcon className='icon-header' style={{ fontSize: 45 }}></AddCircleIcon>

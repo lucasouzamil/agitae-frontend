@@ -15,6 +15,10 @@ export default function Event(props) {
     } else {
         img = 'assets/img/placeholder_image.png';
     }
+
+    const date = props.eventdata.date.split('-');
+    console.log('$$$$$$$');
+    console.log(date[0])
     
     return (
         <div className='main'>
@@ -25,7 +29,7 @@ export default function Event(props) {
                 <p className='eventTitle'>{props.eventdata.name}</p>
                 <div className='eventInfo'>
                     <CalendarMonthIcon className="iconData" style={{ fontSize: '20px' }}></CalendarMonthIcon>
-                    <p className='eventInfoData'>{props.eventdata.date}</p>
+                    <p className='eventInfoData'>{`${date[2]}/${date[1]}/${date[0]}`}</p>
                 </div>
                 <div className='eventInfo'>
                     <RoomIcon className="iconData" style={{ fontSize: '20px' }}></RoomIcon>

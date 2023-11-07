@@ -112,7 +112,7 @@ function formCheck(formData) {
 }
 export default function Form(props) {
 
-    const typesData = [
+    /* const typesData = [
         {
             "id": "b3ada38c-4f38-4436-88c9-5e5aa6a53526",
             "name": "Culinária",
@@ -235,7 +235,10 @@ export default function Form(props) {
             "name": "Universitárias",
             "events": []
         }
-    ];
+    ]; */
+
+    const typesData = props.db[1];
+    const subTypesData = props.db[2];
 
     const [selectedType, setSelectedType] = useState(typesData[0].id);
     const type = typesData.find((type) => type.id === selectedType);

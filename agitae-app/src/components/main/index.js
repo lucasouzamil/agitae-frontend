@@ -7,6 +7,7 @@ import ScrollRow from './components/scrollrow'
 import EventType from './components/eventType'
 import EventSubType from './components/eventSubType'
 import Event from './components/event'
+import EventPage from "./components/eventPage";
 
 export default function Main(props) {
 
@@ -91,6 +92,7 @@ export default function Main(props) {
                         <Event key={`note__${item.id}`} eventdata={item}></Event>
                     ))}
                 </div>
+                <EventPage></EventPage>
             </section>
         </main>
     );

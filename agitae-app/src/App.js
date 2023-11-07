@@ -30,7 +30,6 @@ function App() {
     setEventsData(db.events);
     setEventsTypesData(db.event_types);
     setEventSubTypesData(db.event_sub_types);
-
   }
 
   const [theme, setTheme] = useState('dark');

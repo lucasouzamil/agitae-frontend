@@ -1,0 +1,147 @@
+.main-eventPage{
+    font-family: var(--secondary-font);
+    color: var(--tertiary-color-oposite);
+}
+
+.section-eventPage {
+    position: fixed;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 700px;
+    width: 800px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 50px rgb(0 0 0 / 40%);
+    backdrop-filter: blur(33px);
+    background-color: var(--primary-color);
+    padding: 20px;
+}
+
+[in-screen='false'] {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+[in-screen='false'] {
+    left: -150%;
+}
+
+.icon-x {
+    color: var(--tertiary-color-oposite);
+}
+
+.header-eventPage {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn-x-eventPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    scale: 1;
+    transition: scale 0.3s ease, background-color 0.3s ease;
+    border: None;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.btn-x-eventPage:hover {
+    scale: 1.08;
+    background-color: var(--secondary-color);
+}
+
+.blockImageInput {
+    position: relative;
+    background-color: white;
+    width: 450px;
+    height: 253px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.ImageInput {
+    width: 100%;
+    object-fit: cover; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    border-radius: 10px;
+}
+
+.header-eventPage{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.infos-eventpage{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    
+}
+
+.eventInfo-eventpage {
+    transition: all 0.05s ease;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.eventInfoIcon-eventpage {
+    height: 30px;
+    margin-right: 15px;
+}
+
+.eventInfoData-eventpage {
+    font-weight: normal;
+    max-width: 100%;
+    text-align: left;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.eventTitle-eventpage {
+    display: flex;
+    font-weight: bold;
+    font-size: 40px;
+    margin-top: 10px;
+}
+
+.description-title{
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 30px;
+    margin-bottom: 15px;
+    border-bottom: solid 1px var(--secondary-color-oposite);
+}
+
+.info-text{
+    font-size: 20px;
+}
+
+@media (max-width:760px) {
+    .section-eventPage {
+        width: 90vw;
+        height: 90vh;
+        max-height: 100vh;
+        max-width: 100vw;
+    }
+}

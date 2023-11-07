@@ -16,7 +16,7 @@ export default function Publisher(props) {
                 </button>
             </div>
             <div className="main-publisher">
-                <Form reloadEvents={props.reloadEvents}></Form>
+                <Form reloadEvents={props.reloadEvents} db={props.db}></Form>
             </div>
         </section>
     )
