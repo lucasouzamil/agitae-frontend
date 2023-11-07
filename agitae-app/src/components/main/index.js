@@ -17,6 +17,13 @@ export default function Main(props) {
     const [filteredSubTypes, setFilteredSubTypes] = useState([]);
     const [filteredEvents, setFilteredEvents] = useState([]);
 
+    const [eventPageVisibility, setEventPageVisibility] = useState('false')
+
+    const viewEventPage = () => {
+        console.log('WOOOW');
+        setEventPageVisibility('true');
+    };
+
 
     useEffect(() => {
         if (props.eventTypes.length > 0) {
@@ -37,10 +44,6 @@ export default function Main(props) {
 
     useEffect(() => {
         const type = props.eventTypes.find((type) => type.id === selectedType);
-        console.log('###');
-        console.log(props.eventTypes);
-        console.log(selectedType);
-        console.log(props.eventSubTypes);
         const filtered = props.eventSubTypes.filter((item) => type.subtypes.includes(item.id));
         setFilteredSubTypes(filtered);
     }, [props.eventTypes, props.eventSubTypes, selectedType, setFilteredSubTypes]);
@@ -49,7 +52,6 @@ export default function Main(props) {
         const subType = props.eventSubTypes.find(item => item.id === selectedSubType);
         const filteredEventsId = subType.events;
         setFilteredEvents(props.events.filter(item => filteredEventsId.includes(item.id)));
-        console.log('FOOOOI')
     }, [props.eventSubTypes, selectedSubType, props.events]);
 
     return (
@@ -89,10 +91,10 @@ export default function Main(props) {
                 </div>
                 <div className="events">
                     {filteredEvents.map((item) => (
-                        <Event key={`note__${item.id}`} eventdata={item}></Event>
+                        <Event key={`note__${item.id}`} eventdata={item} viewEventPage={viewEventPage} ></Event>
                     ))}
                 </div>
-                <EventPage></EventPage>
+                <EventPage inscreen={eventPageVisibility} setvisible={()=>setEventPageVisibility('false')} ></EventPage>
             </section>
         </main>
     );

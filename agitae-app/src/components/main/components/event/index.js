@@ -21,7 +21,7 @@ export default function Event(props) {
     console.log(date[0])
     
     return (
-        <div className='main'>
+        <div className='main' onClick={props.viewEventPage}>
             <div className='blockImg'>
                 <img className='eventImage' src={img} alt='teste' />
             </div>

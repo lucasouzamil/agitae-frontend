@@ -3,14 +3,16 @@ import './eventPage.css'
 import ClearIcon from '@mui/icons-material/Clear';
 import RoomIcon from '@mui/icons-material/Room';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import getWeatherInfoByAddress from '../../../../apis.js';
 
 
 
-export default function Publisher(props) {
+export default function EventPage(props) {
+
 
 
     return (
-        <section in-screen={'true'} className="section-eventPage">
+        <section in-screen={props.inscreen} className="section-eventPage">
             <div className='header-eventPage'>
                 <div></div>
                 <button className="btn-x-eventPage" onClick={props.setvisible}>
@@ -38,14 +40,14 @@ export default function Publisher(props) {
                         </div>
                     </div>
                 </div>
-                    <div>
-                        <p className="description-title">Descrição</p>
-                        <p className="info-text">Lorem lorem lorem lorem lorem lorem lorem</p>
-                    </div>
-                    <div>
-                        <p className="description-title">Informações climáticas</p>
-                        <p className="info-text">Lorem lorem lorem lorem lorem lorem lorem</p>
-                    </div>
+                <div>
+                    <p className="description-title">Descrição</p>
+                    <p className="info-text">Lorem lorem lorem lorem lorem lorem lorem</p>
+                </div>
+                <div>
+                    <p className="description-title">Informações climáticas</p>
+                    <p className="info-text">Lorem lorem lorem lorem lorem lorem lorem</p>
+                </div>
             </div>
         </section>
     )
