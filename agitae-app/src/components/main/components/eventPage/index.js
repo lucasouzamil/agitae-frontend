@@ -8,13 +8,41 @@ import waetherAPI from "../../../../apis";
 
 export default function EventPage(props) {
 
-    const [selectedEvent, setSelectedEvent] = useState(null);
+    const [selectedEvent, setSelectedEvent] = useState(props.visibleEvent);
+    const [weatherInfos, setWeatherInfos] = useState(null);
+
 
     useEffect(() => {
-        const filteredEvent = props.events.find(item => item.id === props.visibleEventId);
-        setSelectedEvent(filteredEvent);
-        console.log(filteredEvent);
-    }, [props.visibleEventId, props.events]);
+        setWeatherInfos(null);
+        if (props.visibleEvent) {
+            setSelectedEvent(props.visibleEvent);
+
+            const address = `${props.visibleEvent.street} ${props.visibleEvent.number}, ${props.visibleEvent.neighborhood}, ${props.visibleEvent.city}, ${props.visibleEvent.state}, Brazil`;
+
+            console.log(address);
+            waetherAPI.getWeatherInfoByAddress(address)
+                .then(weatherData => {
+                    setWeatherInfos(weatherData);
+                    console.log(weatherData);
+                })
+                .catch(error => {
+                    console.error('Ocorreu um erro:', error);
+                });
+        }
+
+    }, [props.visibleEvent]);
+
+    const handleWeatherInfo = () => {
+        const mainCondition = weatherInfos.weather[0].description;
+        const currentTemperature = weatherInfos.main.temp;
+        const feelsLikeTemperature = weatherInfos.main.feels_like;
+
+        return <>
+            <p className="info-text">Descrição: {`${mainCondition}`}</p>
+            <p className="info-text">Temperatura: {`${currentTemperature}°C`}</p>
+            <p className="info-text">Sensação térmica: {`${feelsLikeTemperature}°C`}</p>
+        </>
+    };
 
 
     if (!selectedEvent) {
@@ -28,21 +56,10 @@ export default function EventPage(props) {
         img = 'assets/img/placeholder_image.png';
     }
 
-    const address = `${selectedEvent.street} ${selectedEvent.number}, ${selectedEvent.neighborhood}, ${selectedEvent.city}, ${selectedEvent.state}, Brazil`;
-
-    console.log(address);
-    waetherAPI.getWeatherInfoByAddress(address)
-        .then(weatherData => {
-            console.log(weatherData);
-        })
-        .catch(error => {
-            console.error('Ocorreu um erro:', error);
-        });
-
     return (
         <section in-screen={props.inscreen} className="section-eventPage">
-            <div className='header-eventPage'>
-                <div></div>
+            <div className='XXXXXXXXXXX'>
+                <div className="divvazia"></div>
                 <button className="btn-x-eventPage" onClick={props.setvisible}>
                     <ClearIcon className="icon-x" style={{ fontSize: 35 }}></ClearIcon>
                 </button>
@@ -73,9 +90,9 @@ export default function EventPage(props) {
                     <p className="info-text">{selectedEvent.description}</p>
                 </div>
                 <div>
-                    <p className="description-title">Informações climáticas</p>
-                    <p className="info-text">{address}</p>
-                    <p className="info-text">'CLIMAASS'</p>
+                    <p className="description-title">Informações climáticas atuais</p>
+                    <p className="info-text">{`${props.visibleEvent.street} ${props.visibleEvent.number}, ${props.visibleEvent.neighborhood}, ${props.visibleEvent.city}, ${props.visibleEvent.state}, Brazil`}</p>
+                    <p className="info-text">{weatherInfos ? handleWeatherInfo() : 'Buscando informações climáticas'}</p>
                 </div>
             </div>
         </section>

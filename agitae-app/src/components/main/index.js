@@ -18,12 +18,17 @@ export default function Main(props) {
     const [filteredEvents, setFilteredEvents] = useState([]);
 
     const [eventPageVisibility, setEventPageVisibility] = useState('false');
-    const [visibleEventId, setVisibleEventId] = useState(null);
+    const [visibleEvent, setVisibleEvent] = useState(null);
 
     const viewEventPage = (eventId) => {
-        console.log(eventId);
         setEventPageVisibility('true');
-        setVisibleEventId(eventId);
+        console.log('AAAAAAAA')
+        handleEventClick(eventId);
+    };
+
+    const handleEventClick = (eventId) => {
+        const filteredEvent = props.events.find(item => item.id === eventId);
+        setVisibleEvent(filteredEvent);
     };
 
 
@@ -97,7 +102,7 @@ export default function Main(props) {
                         <Event key={`note__${item.id}`} eventdata={item} viewEventPage={()=>viewEventPage(item.id)} ></Event>
                     ))}
                 </div>
-                <EventPage events={props.events} visibleEventId={visibleEventId} inscreen={eventPageVisibility} setvisible={()=>setEventPageVisibility('false')} ></EventPage>
+                <EventPage events={props.events} visibleEvent={visibleEvent} inscreen={eventPageVisibility} setvisible={()=>setEventPageVisibility('false')} ></EventPage>
             </section>
         </main>
     );

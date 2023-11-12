@@ -11,7 +11,7 @@ const waetherAPI = {
       const lon = geocodingResult.features[0].properties.lon;
       const lat = geocodingResult.features[0].properties.lat;
 
-      const weatherResponse = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_WEATHER_KEY}`);
+      const weatherResponse = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=pt_br&units=metric&appid=${API_WEATHER_KEY}`);
       const weatherData = weatherResponse.data;
 
       return weatherData;

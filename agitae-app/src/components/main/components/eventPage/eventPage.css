@@ -1,4 +1,4 @@
-.main-eventPage{
+.main-eventPage {
     font-family: var(--secondary-font);
     color: var(--tertiary-color-oposite);
 }
@@ -34,10 +34,19 @@
 
 .header-eventPage {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.XXXXXXXXXXX {
+    width: 100%;
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
+
 
 .btn-x-eventPage {
     display: flex;
@@ -74,26 +83,26 @@
 
 .ImageInput {
     width: 100%;
-    object-fit: cover; 
+    object-fit: cover;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%);
     border-radius: 10px;
 }
 
-.header-eventPage{
+.header-eventPage {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
 }
 
-.infos-eventpage{
+.infos-eventpage {
     display: flex;
     flex-direction: column;
     margin-left: 15px;
-    
+
 }
 
 .eventInfo-eventpage {
@@ -125,7 +134,7 @@
     margin-top: 10px;
 }
 
-.description-title{
+.description-title {
     font-weight: bold;
     margin-top: 15px;
     font-size: 30px;
@@ -133,8 +142,9 @@
     border-bottom: solid 1px var(--secondary-color-oposite);
 }
 
-.info-text{
+.info-text {
     font-size: 20px;
+    margin-top: 10px;
 }
 
 @media (max-width:760px) {
