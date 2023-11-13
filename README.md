@@ -1,5 +1,5 @@
 # Agitaê Frontend - Lucas Lima
-[Link do repositório do backend](https://www.youtube.com/watch?v=rIQygQGKxb0&t=5s)
+[Link do repositório do backend](https://github.com/lucasouzamil/agitae-backend)
 
 
 ## Descrição do Projeto
