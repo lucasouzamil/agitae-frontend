@@ -53,8 +53,12 @@ async function checkEventExistence(eventData) {
 
     for (let key in events) {
         const event = events[key];
-        if (event.url === eventData.get('url')) {
-            return true;
+        if (event.name === eventData.get('name')) {
+            if (event.date === eventData.get('date')) {
+                if (event.local_name === eventData.get('local_name')){
+                    return true;
+                }
+            }
         }
     }
     console.log('EAAAAAaa')
@@ -64,7 +68,7 @@ function isValidURL(url) {
     const urlPattern = /^(https?:\/\/)?([\da-zA-Z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
     return urlPattern.test(url);
 }
-function checkDate(date) {
+function checkPastDate(date) {
     const currentDate = new Date();
     const checkDate = new Date(date);
     if (isNaN(currentDate) || isNaN(checkDate)) {
@@ -73,6 +77,21 @@ function checkDate(date) {
     currentDate.setHours(0, 0, 0, 0);
     checkDate.setHours(0, 0, 0, 0);
     return checkDate < currentDate;
+}
+function checkFutureDate(date) {
+    const currentDate = new Date();
+    const checkDate = new Date(date);
+    
+    if (isNaN(currentDate) || isNaN(checkDate)) {
+        return false;
+    }
+
+    currentDate.setFullYear(currentDate.getFullYear() + 1);
+
+    currentDate.setHours(0, 0, 0, 0);
+    checkDate.setHours(0, 0, 0, 0);
+
+    return checkDate > currentDate;
 }
 function formCheck(formData) {
     if (formData.get('name').length === 0) {
@@ -84,8 +103,11 @@ function formCheck(formData) {
     if (!isValidURL(formData.get('url'))) {
         return 'Insira uma URL válida.'
     }
-    if (formData.get('date').length === 0 || checkDate(formData.get('date'))) {
-        return 'Insira uma data válida.';
+    if (formData.get('date').length === 0 || checkPastDate(formData.get('date'))) {
+        return 'Insira uma data futura.';
+    }
+    if (formData.get('date').length === 0 || checkFutureDate(formData.get('date'))) {
+        return 'Apenas datas no intervalo de um ano são aceitas.';
     }
     if (formData.get('time').length === 0) {
         return 'Insira uma hora.'

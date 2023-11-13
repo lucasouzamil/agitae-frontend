@@ -3,6 +3,8 @@ import './eventPage.css'
 import ClearIcon from '@mui/icons-material/Clear';
 import RoomIcon from '@mui/icons-material/Room';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import InsertLinkIcon from '@mui/icons-material/InsertLink';
+import AccessAlarmIcon from '@mui/icons-material/AccessAlarm';
 import waetherAPI from "../../../../apis";
 
 
@@ -80,8 +82,16 @@ export default function EventPage(props) {
                             <p className='eventInfoData-eventpage'>{`${date[2]}/${date[1]}/${date[0]}`}</p>
                         </div>
                         <div className='eventInfo-eventpage'>
+                            <AccessAlarmIcon className="iconData-eventpage" style={{ fontSize: '20px' }}></AccessAlarmIcon>
+                            <p className='eventInfoData-eventpage'>{selectedEvent.time.substring(0, 5)}</p>
+                        </div>
+                        <div className='eventInfo-eventpage'>
                             <RoomIcon className="iconData-eventpage" style={{ fontSize: '20px' }}></RoomIcon>
                             <p className='eventInfoData-eventpage'>{selectedEvent.local_name}</p>
+                        </div>
+                        <div className='eventInfo-eventpage'>
+                            <InsertLinkIcon className="iconData-eventpage" style={{ fontSize: '20px' }}></InsertLinkIcon>
+                            <a className='eventInfoData-eventpage' href={selectedEvent.url}>Página do evento</a>
                         </div>
                     </div>
                 </div>
