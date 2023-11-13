@@ -59,6 +59,11 @@ Para executar a aplicação, siga os seguintes passos:
 * **Django**: para desenvolver o backend.
 * **API's externas**: [Geoapify](https://www.geoapify.com/) para converter endereçõs em coordenadas. [Openweathermap](https://openweathermap.org/) para converter coordenadas em informações climáticas.
 
+## Funcionalidades adicionais
+* **Dark Mode**: o site possui dark mode e light mode.
+* **Form check**: ao publicar o evento, há uma checagem no formulário para fazer com que o banco de dados seja povoado de maneira adequada e sem spam.
+* **Responsividade**: o site é responsivo e é possível acessálo por aparelhos móveis sem problemas.
+* **Imagem no banco de dados**: o banco de dados armazena imagens.
 
 ## Autor
 * Nome: Lucas Lima
