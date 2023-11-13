@@ -43,16 +43,19 @@ Para executar a aplicação, siga os seguintes passos:
 
     // Linux/MacOS
     source env/bin/activate
-5. Clone o repositório do frontend:
+5. Inicie o banco de dados:
+    ```bash
+    python3 manage.py runserver
+6. Clone o repositório do frontend:
    ```bash
    git clone https://github.com/lucasouzamil/agitae-frontend
-6. Navegue para o diretório do frontend:
+7. Navegue para o diretório do frontend:
    ```bash
    cd agitae-frontend/agitae-app
-7. Inicie a aplicação:
+8. Inicie a aplicação:
    ```bash
    npm start
-8. Acesse o link http://localhost:3000/ no seu navegador de preferência.
+9. Acesse o link http://localhost:3000/ no seu navegador de preferência.
 
 ## Tecnologias Utilizadas
 * **React**: para desenvolver o frontend.
